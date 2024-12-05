@@ -86,6 +86,7 @@ d = {
 print('Выберите категорию: ')
 for i in d:
     print(i, end=' ')
+print()
 i = input()
 max_wrong = len(HANGMAN) - 1
 WORDS = d.get(i)  # Слова для угадывания
@@ -100,7 +101,9 @@ while wrong < max_wrong and so_far != word:
     print("\nНа данный момент слово выглядит так:\n", so_far)
 
     guess = input("\n\nВведите свое предположение: ")  # Пользователь вводит предполагаемую букву
-
+    guess = guess.lower()
+    if guess == word:
+        break
     while guess in used:
         print("Вы уже вводили букву", guess)  # Если буква уже вводилась ранее, то выводим соответствующее сообщение
         guess = input("Введите свое предположение: ")  # Пользователь вводит предполагаемую букву
