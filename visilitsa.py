@@ -88,6 +88,8 @@ for i in d:
     print(i, end=' ')
 print()
 i = input()
+i = i.lower()
+i = i[0].upper() + i[1:]
 max_wrong = len(HANGMAN) - 1
 WORDS = d.get(i)  # Слова для угадывания
 word = choice(WORDS)  # Слово, которое нужно угадать
